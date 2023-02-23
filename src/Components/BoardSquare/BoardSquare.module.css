@@ -1,0 +1,40 @@
+.square {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 60%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.middle {
+  border: 3px solid #ff914d;
+}
+
+.left {
+  border-right: 3px solid #ff914d;
+}
+
+.right {
+  border-left: 3px solid #ff914d;
+}
+
+.top {
+  border-bottom: 3px solid #ff914d;
+}
+
+.bottom {
+  border-top: 3px solid #ff914d;
+}
+
+@media (min-width: 872px) {
+  .square {
+    width: 150px;
+    height: 150px;
+  }
+}
