@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import BoardSquare from "../BoardSquare/BoardSquare";
 import style from "./ScoreBoard.module.css";
 
-const ScoreBoard = () => {
+interface props {
+  setWinner: Dispatch<SetStateAction<string | null>>;
+  SquaresValues: string[];
+  setSquaresValues: Dispatch<SetStateAction<string[]>>;
+}
+
+const ScoreBoard = ({ setWinner, SquaresValues, setSquaresValues }: props) => {
   // since there is only 2 possibilities then false means Banana
   //true means Apple.
   const [nextValue, setNextValue] = useState<boolean>(false);
 
   //values of the squares
-  const [SquaresValues, setSquaresValues] = useState<string[]>([]);
 
   //function to pass for all squares in the board to edit its value when clicked
   const handleClick = (index: number) => {
@@ -17,6 +22,7 @@ const ScoreBoard = () => {
 
   const setSquareValue = (index: number) => {
     const newValues = [...SquaresValues];
+    if (newValues[index]) return;
     newValues[index] = nextValue ? "Apple" : "Banana";
     setSquaresValues(newValues);
     setNextValue(!nextValue);
@@ -42,7 +48,7 @@ const ScoreBoard = () => {
         SquaresValues[a] === SquaresValues[b] &&
         SquaresValues[a] === SquaresValues[c]
       ) {
-        console.log(SquaresValues[a] + " Is the winner");
+        setWinner(SquaresValues[a]);
       }
     });
   };

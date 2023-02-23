@@ -1,0 +1,23 @@
+.popupbackgroud {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.214);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: auto;
+  padding: 20px;
+  align-items: center;
+  background-color: yellow;
+  border-radius: 7px;
+  overflow: hidden;
+}
