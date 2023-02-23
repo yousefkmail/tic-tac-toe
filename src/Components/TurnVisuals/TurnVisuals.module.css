@@ -1,0 +1,23 @@
+.maincontainer img {
+  width: 100px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  transition: 0.4s all ease-in-out;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.Banana {
+  position: relative;
+  transform: translateY(100%);
+}

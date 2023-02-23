@@ -6,13 +6,17 @@ interface props {
   setWinner: Dispatch<SetStateAction<string | null>>;
   SquaresValues: string[];
   setSquaresValues: Dispatch<SetStateAction<string[]>>;
+  nextValue: boolean;
+  setNextValue: Dispatch<SetStateAction<boolean>>;
 }
 
-const ScoreBoard = ({ setWinner, SquaresValues, setSquaresValues }: props) => {
-  // since there is only 2 possibilities then false means Banana
-  //true means Apple.
-  const [nextValue, setNextValue] = useState<boolean>(false);
-
+const ScoreBoard = ({
+  setWinner,
+  SquaresValues,
+  setSquaresValues,
+  nextValue,
+  setNextValue,
+}: props) => {
   //values of the squares
 
   //function to pass for all squares in the board to edit its value when clicked
